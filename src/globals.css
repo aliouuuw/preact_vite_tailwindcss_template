@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-accent: #000000;
+  --color-danger: #ff0000;
+
+  --font-funnel-display: 'Funnel Display', serif;
+  --font-funnel-sans: 'Funnel Sans', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-funnel-sans antialiased;
+  }
+
+  h1 {
+    @apply text-6xl font-bold md:text-7xl lg:text-8xl;
+  }
+
+  h2 {
+    @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+  }
+
+  h3 {
+    @apply text-3xl font-semibold md:text-4xl lg:text-5xl;
+  }
+  
+  h4 {
+    @apply text-lg font-semibold md:text-xl lg:text-2xl;
+  }
+
+  p {
+    @apply text-base ;
+  }
+  
+  a {
+    @apply text-foreground hover:underline hover:cursor-pointer active:scale-95 transition-all duration-50;
+  }
+}

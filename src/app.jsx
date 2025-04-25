@@ -1,28 +1,23 @@
 import { Router } from "preact-router";
 import Home from "./pages/home";
 import ExtraPage from "./pages/extrapage";
-
+import Header from "./components/header";
+import Footer from "./components/footer";
 export function App() {
+  const routes = [
+    { path: "/", name: "Home" },
+    { path: "/extrapage", name: "Extra page" },
+  ];
   return (
-    <div className="flex flex-col h-screen min-h-screen px-4 py-2">
-      <header className="flex items-center justify-center gap-4">
-        <nav className="flex items-center justify-center gap-4">
-          <a href="/" className="text-blue-500 hover:text-blue-600 text-sm">
-            Home
-          </a>
-          <a
-            href="/extrapage"
-            className="text-blue-500 hover:text-blue-600 text-sm"
-          >
-            Extra page
-          </a>
-        </nav>
-      </header>
-
-      <Router>
-        <Home path="/" />
-        <ExtraPage path="/extrapage" />
-      </Router>
+    <div className="flex flex-col min-h-screen relative bg-neutral-900 to-100%">
+      <Header routes={routes} />
+      <main className="flex-1">
+        <Router>
+          <Home path="/" />
+          <ExtraPage path="/extrapage" />
+        </Router>
+      </main>
+      <Footer links={routes} />
     </div>
   );
 }
